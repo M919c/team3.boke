@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bokeData
+    username: root
+    password: Mzy20010919
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update # 可以选择 update, create, create-drop, validate 等
+    show-sql: true
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      table-prefix: t_
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.team3.boke.entity
+logging:
+  level:
+    org.apache.ibatis: DEBUG
